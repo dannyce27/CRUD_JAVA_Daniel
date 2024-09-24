@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Modelo;
 
 import Vista.jfrCajero;
@@ -99,7 +96,7 @@ public class Cajeros {
         //Definimos el modelo de la tabla
         DefaultTableModel modeloDeDatos = new DefaultTableModel();
         
-        modeloDeDatos.setColumnIdentifiers(new Object[]{"UUID_Cajero", "Nombre_Cajero", "Edad_Cajero", "Peso_Cajero, Correo_Cajero"});
+        modeloDeDatos.setColumnIdentifiers(new Object[]{"UUID_Cajero", "Nombre_Cajero", "Edad_Cajero", "Peso_Cajero", "Correo_Cajero"});
         try {
             //Creamos un Statement
             Statement statement = conexion.createStatement();
@@ -202,9 +199,9 @@ public class Cajeros {
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.setColumnIdentifiers(new Object[]{"UUID_Cajero", "Nombre_Cajero", "Edad_Cajero", "Peso_Cajero", "Correo_Cajero"});
         try {
-            PreparedStatement deleteEstudiante = conexion.prepareStatement("SELECT * FROM tbCajero WHERE Nombre LIKE ? || '%'");
-            deleteEstudiante.setString(1, txtBuscar.getText());
-            ResultSet rs = deleteEstudiante.executeQuery();
+            PreparedStatement deleteCajero = conexion.prepareStatement("SELECT * FROM tbCajero WHERE Nombre LIKE ? || '%'");
+            deleteCajero.setString(1, txtBuscar.getText());
+            ResultSet rs = deleteCajero.executeQuery();
  
              while (rs.next()) {
                 //Llenamos el modelo por cada vez que recorremos el resultSet

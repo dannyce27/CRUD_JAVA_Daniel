@@ -133,7 +133,7 @@ public class jfrCajero extends javax.swing.JFrame {
         btnActualizar.setColor2(new java.awt.Color(0, 0, 0));
         jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 150, 40));
 
-        btnLimpiar1.setText("Actualizar");
+        btnLimpiar1.setText("Limpiar");
         btnLimpiar1.setActionCommand("Limpiar");
         btnLimpiar1.setColor1(new java.awt.Color(255, 255, 255));
         btnLimpiar1.setColor2(new java.awt.Color(0, 0, 0));
