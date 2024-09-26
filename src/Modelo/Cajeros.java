@@ -169,14 +169,14 @@ public class Cajeros {
             String miUUId = tabla.getValueAt(filaSeleccionada, 0).toString();
             try { 
                 //Ejecutamos la Query
-                PreparedStatement updateUser = conexion.prepareStatement("UPDATE tbCajero SET Nombre_Cajero= ?, Edad_Cajero = ?, Peso_Cajero = ?, Correo_Cajero WHERE UUID_Cajero = ?");
+                PreparedStatement updateCajero = conexion.prepareStatement("UPDATE tbCajero SET Nombre_Cajero= ?, Edad_Cajero = ?, Peso_Cajero = ?, Correo_Cajero WHERE UUID_Cajero = ?");
 
-                updateUser.setString(1, getNombreCajero());
-                updateUser.setInt(2, getEdadCajero());
-                updateUser.setBigDecimal(3, getPesoCajero());
-                updateUser.setString(4, getCorreoCajero());
-                updateUser.setString(5, miUUId);
-                updateUser.executeUpdate();
+                updateCajero.setString(1, getNombreCajero());
+                updateCajero.setInt(2, getEdadCajero());
+                updateCajero.setBigDecimal(3, getPesoCajero());
+                updateCajero.setString(4, getCorreoCajero());
+                updateCajero.setString(5, miUUId);
+                updateCajero.executeUpdate();
             } catch (Exception e) {
                 System.out.println("Este es el error en el metodo de Actualizar" + e);
             }

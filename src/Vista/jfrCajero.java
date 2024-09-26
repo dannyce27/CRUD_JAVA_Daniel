@@ -4,6 +4,9 @@ import Controlador.ctrlCajeros;
 import Modelo.Cajeros;
 import Modelo.ColorFondo;
 import Modelo.buttonGradient;
+import java.awt.Component;
+import java.awt.Point;
+import java.awt.geom.RoundRectangle2D;
 
 /**
  *
@@ -11,15 +14,35 @@ import Modelo.buttonGradient;
  */
 public class jfrCajero extends javax.swing.JFrame {
 
+    private Point point;
     public jfrCajero() {
         initComponents();
         this.setLocationRelativeTo(null);
+        setShape(new RoundRectangle2D.Float(0, 0, getWidth(), getHeight(), 30,30));
+        
         
         ColorFondo colorFondo = new ColorFondo();
-        jPanel1.setLayout(new java.awt.BorderLayout()); // Set layout for jPanel1
-        jPanel1.add(colorFondo); // Add ColorFondo panel to jPanel1
+        jPanel1.setLayout(new java.awt.BorderLayout()); 
+        jPanel1.add(colorFondo); 
         
         buttonGradient gradientButton = new buttonGradient();
+        
+        rsscalelabel.RSScaleLabel.setScaleLabel(jLabel3, "src/Imagenes/pngwing.com (1).png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(jlabel1, "src/Imagenes/minimizarimg.png");
+        
+         addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                formMousePressed(evt);
+            }
+        });
+        
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                formMouseDragged(evt);
+            }
+        });
+        
+        
        
       
     }
@@ -47,19 +70,31 @@ public class jfrCajero extends javax.swing.JFrame {
         txtPeso1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtbCajeros = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jlabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                formMouseDragged(evt);
+            }
+        });
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                formMousePressed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
         jLabel1.setText("CAJEROS");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 170, 40));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("CRUD");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 110, 50));
 
@@ -131,10 +166,9 @@ public class jfrCajero extends javax.swing.JFrame {
         btnActualizar.setText("Actualizar");
         btnActualizar.setColor1(new java.awt.Color(255, 255, 255));
         btnActualizar.setColor2(new java.awt.Color(0, 0, 0));
-        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 150, 40));
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, 150, 40));
 
         btnLimpiar1.setText("Limpiar");
-        btnLimpiar1.setActionCommand("Limpiar");
         btnLimpiar1.setColor1(new java.awt.Color(255, 255, 255));
         btnLimpiar1.setColor2(new java.awt.Color(0, 0, 0));
         jPanel1.add(btnLimpiar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, 150, 40));
@@ -152,6 +186,51 @@ public class jfrCajero extends javax.swing.JFrame {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
@@ -160,7 +239,23 @@ public class jfrCajero extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jtbCajeros);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 540, 840, 280));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 840, 280));
+
+        jLabel3.setText("jLabel3");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 20, 60, 50));
+
+        jlabel1.setText("jLabel3");
+        jlabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlabel1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jlabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, 40, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -199,6 +294,36 @@ public class jfrCajero extends javax.swing.JFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jlabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlabel1MouseClicked
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_jlabel1MouseClicked
+
+    private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
+         point = evt.getPoint();
+    }//GEN-LAST:event_formMousePressed
+
+    private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
+      
+   if (point != null) {
+        // Obtiene las coordenadas absolutas del mouse
+        Point currentScreenLocation = evt.getLocationOnScreen();
+        
+        // Calcula la nueva posición del JFrame sumando la diferencia y restando el punto relativo
+        int x = currentScreenLocation.x - point.x;
+        int y = currentScreenLocation.y - point.y;
+        
+        // Establece la nueva ubicación del JFrame
+        this.setLocation(x, y);
+    }
+
+      
+  
+    }//GEN-LAST:event_formMouseDragged
 
     
     public static void initFrmCajero(){
@@ -253,12 +378,14 @@ public class jfrCajero extends javax.swing.JFrame {
     public Modelo.buttonGradient btnLimpiar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jlabel1;
     public javax.swing.JTable jtbCajeros;
     public javax.swing.JTextField txtBuscar;
     public javax.swing.JTextField txtCorreo;
