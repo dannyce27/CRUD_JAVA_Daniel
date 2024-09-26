@@ -44,8 +44,8 @@ public class buttonGradient extends JButton {
         this.color2 = color2;
     }
 
-    private Color color1 = Color.decode("#0099F7");
-    private Color color2 = Color.decode("#F11712");
+    private Color color1 = Color.WHITE;
+    private Color color2 = Color.BLACK;
     private final Timer timer;
     private final Timer timerPressed;
     private float alpha = 0.3f;
